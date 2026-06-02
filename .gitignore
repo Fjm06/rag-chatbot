@@ -9,6 +9,9 @@ __pycache__/
 # Environment variables (secrets)
 .env
 
+# Streamlit secrets (never commit these)
+.streamlit/secrets.toml
+
 # ChromaDB local storage (we'll create this later)
 chroma_db/
 
