@@ -1,0 +1,50 @@
+Process Scheduling Algorithms
+
+CPU scheduling determines the order in which processes get CPU time. The goal is to maximize CPU utilization and throughput while minimizing waiting time and response time.
+
+Scheduling Criteria:
+- CPU Utilization: Keep the CPU as busy as possible.
+- Throughput: Number of processes completed per unit time.
+- Turnaround Time: Total time from submission to completion of a process.
+- Waiting Time: Total time a process spends in the ready queue.
+- Response Time: Time from submission until the first response is produced.
+
+Common Scheduling Algorithms:
+
+1. First-Come, First-Served (FCFS):
+   - Processes are scheduled in the order they arrive.
+   - Simple but can cause the convoy effect: short processes wait behind long ones.
+   - Non-preemptive.
+
+2. Shortest Job First (SJF):
+   - The process with the shortest next CPU burst is scheduled first.
+   - Optimal in terms of minimizing average waiting time.
+   - Difficult to implement because CPU burst length is not always known in advance.
+   - Can be preemptive (Shortest Remaining Time First - SRTF) or non-preemptive.
+
+3. Round Robin (RR):
+   - Each process gets a fixed time slice called a quantum (e.g., 10ms).
+   - After the quantum expires, the process is preempted and moved to the back of the ready queue.
+   - Fair and good for time-sharing systems.
+   - Performance depends heavily on the size of the quantum.
+
+4. Priority Scheduling:
+   - Each process is assigned a priority. The highest priority process gets the CPU first.
+   - Can be preemptive or non-preemptive.
+   - Problem: Starvation — low priority processes may never get CPU time.
+   - Solution: Aging — gradually increase the priority of waiting processes.
+
+5. Multilevel Queue Scheduling:
+   - The ready queue is divided into multiple queues (e.g., foreground and background).
+   - Each queue has its own scheduling algorithm.
+   - Processes are permanently assigned to a queue.
+
+6. Multilevel Feedback Queue:
+   - Similar to multilevel queue but processes can move between queues.
+   - A process using too much CPU time is moved to a lower-priority queue.
+   - Most flexible and most complex scheduling algorithm.
+   - Used in most modern operating systems.
+
+Preemptive vs Non-Preemptive Scheduling:
+- Non-preemptive: Once a process starts running, it runs until it finishes or blocks. (e.g., FCFS, SJF)
+- Preemptive: The OS can interrupt a running process and give the CPU to another. (e.g., Round Robin, SRTF)

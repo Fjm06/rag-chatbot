@@ -1,0 +1,31 @@
+Operating Systems - Introduction
+
+An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs.
+
+Key Functions of an Operating System:
+1. Process Management - The OS handles the creation, scheduling, and termination of processes.
+2. Memory Management - The OS manages the allocation and deallocation of memory space to programs.
+3. File System Management - The OS controls how data is stored and retrieved on storage devices.
+4. Device Management - The OS manages communication between software and hardware devices via drivers.
+5. Security and Access Control - The OS enforces permissions and protects resources from unauthorized access.
+
+Types of Operating Systems:
+- Batch OS: Executes jobs in batches without user interaction (e.g., early IBM systems).
+- Time-Sharing OS: Multiple users share system resources simultaneously (e.g., Unix).
+- Distributed OS: Manages a group of independent computers and makes them appear as a single system.
+- Real-Time OS (RTOS): Processes data within strict time constraints (e.g., embedded systems in cars or medical devices).
+- Mobile OS: Designed for mobile devices (e.g., Android, iOS).
+
+Examples of Operating Systems:
+- Windows: Widely used desktop OS by Microsoft.
+- Linux: Open-source OS used in servers, desktops, and embedded systems.
+- macOS: Apple's desktop OS based on Unix.
+- Android: Mobile OS based on the Linux kernel.
+
+The Kernel:
+The kernel is the core component of an OS. It operates in privileged mode (kernel mode) and has direct access to hardware. It acts as a bridge between applications and hardware.
+
+User Mode vs Kernel Mode:
+- User Mode: Applications run here with restricted access to hardware.
+- Kernel Mode: The OS kernel runs here with full hardware access.
+- A system call is how a user-mode program requests a service from the kernel.

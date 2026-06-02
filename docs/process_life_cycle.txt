@@ -1,0 +1,46 @@
+Process Life Cycle
+
+A process is a program in execution. It is an active entity, unlike a program which is a passive set of instructions stored on disk.
+
+Process vs Program:
+- A program is a static set of instructions (a file on disk).
+- A process is a running instance of a program. The same program can spawn multiple processes.
+
+Process States:
+A process goes through several states during its lifetime:
+
+1. New: The process is being created. Resources are being allocated.
+2. Ready: The process is loaded into memory and waiting to be assigned to the CPU.
+3. Running: The process is currently being executed by the CPU.
+4. Waiting (Blocked): The process is waiting for some event (e.g., I/O completion, a signal).
+5. Terminated (Exit): The process has finished execution and resources are being deallocated.
+
+State Transitions:
+- New → Ready: Process is admitted to the ready queue.
+- Ready → Running: The scheduler dispatches the process to the CPU.
+- Running → Waiting: Process requests I/O or waits for an event.
+- Waiting → Ready: The I/O operation or event completes.
+- Running → Ready: Process is preempted (interrupted by the scheduler, e.g., time slice expires).
+- Running → Terminated: Process completes execution or is killed.
+
+Process Control Block (PCB):
+Each process is represented in the OS by a Process Control Block (PCB), also called a Task Control Block.
+The PCB contains:
+- Process ID (PID): Unique identifier for the process.
+- Process State: Current state (new, ready, running, waiting, terminated).
+- Program Counter (PC): Address of the next instruction to execute.
+- CPU Registers: Contents of all CPU registers for this process.
+- Memory Management Info: Page tables, segment tables, memory limits.
+- I/O Status: List of open files and I/O devices assigned to the process.
+- Accounting Info: CPU time used, time limits, job numbers.
+
+Context Switching:
+When the CPU switches from one process to another, the OS saves the state of the old process into its PCB and loads the state of the new process from its PCB.
+This is called a context switch. Context switching has overhead — the CPU does no useful work during the switch.
+
+CPU Scheduling:
+The scheduler decides which process in the ready queue gets the CPU next.
+Types of schedulers:
+- Long-term scheduler (Job scheduler): Controls which processes are admitted to the ready queue from the job pool.
+- Short-term scheduler (CPU scheduler): Selects which ready process gets the CPU next. Runs very frequently.
+- Medium-term scheduler: Handles swapping — temporarily removing processes from memory (swapping out) and reintroducing them later (swapping in).
