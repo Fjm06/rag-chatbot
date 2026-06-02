@@ -1,0 +1,17 @@
+# Virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables (secrets)
+.env
+
+# ChromaDB local storage (we'll create this later)
+chroma_db/
+
+# OS files
+.DS_Store
+Thumbs.db
